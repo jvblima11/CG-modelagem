@@ -1,0 +1,37 @@
+# Project: Projeto2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = modelos.o geometry.o glut.o magnemite.o
+LINKOBJ  = modelos.o geometry.o glut.o magnemite.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lfreeglut -lopengl32 -Wl,--subsystem,windows -mwindows -lopengl32 -lfreeglut -lglu32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = modelagem.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+modelos.o: modelos.cpp
+	$(CPP) -c modelos.cpp -o modelos.o $(CXXFLAGS)
+
+geometry.o: geometry.cpp
+	$(CPP) -c geometry.cpp -o geometry.o $(CXXFLAGS)
+
+glut.o: glut.cpp
+	$(CPP) -c glut.cpp -o glut.o $(CXXFLAGS)
+
+magnemite.o: magnemite.cpp
+	$(CPP) -c magnemite.cpp -o magnemite.o $(CXXFLAGS)
