@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = modelos.o geometry.o glut.o magnemite.o
-LINKOBJ  = modelos.o geometry.o glut.o magnemite.o
+OBJ      = modelos.o geometry.o glut.o magnemite.o dratini.o dragonair.o dragonite.o draw_rabo.o draw_wing.o tgaload.o quadrado.o
+LINKOBJ  = modelos.o geometry.o glut.o magnemite.o dratini.o dragonair.o dragonite.o draw_rabo.o draw_wing.o tgaload.o quadrado.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lfreeglut -lopengl32 -Wl,--subsystem,windows -mwindows -lopengl32 -lfreeglut -lglu32
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -35,3 +35,24 @@ glut.o: glut.cpp
 
 magnemite.o: magnemite.cpp
 	$(CPP) -c magnemite.cpp -o magnemite.o $(CXXFLAGS)
+
+dratini.o: dratini.cpp
+	$(CPP) -c dratini.cpp -o dratini.o $(CXXFLAGS)
+
+dragonair.o: dragonair.cpp
+	$(CPP) -c dragonair.cpp -o dragonair.o $(CXXFLAGS)
+
+dragonite.o: dragonite.cpp
+	$(CPP) -c dragonite.cpp -o dragonite.o $(CXXFLAGS)
+
+draw_rabo.o: draw_rabo.cpp
+	$(CPP) -c draw_rabo.cpp -o draw_rabo.o $(CXXFLAGS)
+
+draw_wing.o: draw_wing.cpp
+	$(CPP) -c draw_wing.cpp -o draw_wing.o $(CXXFLAGS)
+
+tgaload.o: tgaload.cpp
+	$(CPP) -c tgaload.cpp -o tgaload.o $(CXXFLAGS)
+
+quadrado.o: quadrado.cpp
+	$(CPP) -c quadrado.cpp -o quadrado.o $(CXXFLAGS)

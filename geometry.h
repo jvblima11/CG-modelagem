@@ -20,4 +20,5 @@ void drawTrapezoid3(float base, float top, float height, float depth, int withTo
 
 void drawTrapezoid2(float base, float top, float height);
 
+void drawPyramid();
 #endif
